@@ -1,0 +1,117 @@
+.profile-page{
+
+    min-height:100vh;
+
+    background:url('/assets/images/abha-bg.jpg') center center/cover no-repeat;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding:40px;
+
+    background:rgb(236 243 244 / 45%);
+
+}
+
+.page-title{
+
+    color:#0097e6;
+
+    margin-bottom:25px;
+
+    font-weight:600;
+
+}
+
+.glass-card{
+
+    width:100%;
+
+    max-width:1050px;
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:12px;
+
+    padding:30px;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.15);
+
+}
+
+.card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.card-header h4{
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+.card-header small{
+
+    color:#666;
+
+}
+
+label{
+
+    font-weight:600;
+
+    margin-bottom:5px;
+
+}
+
+.form-control{
+
+    background:#fff;
+
+    border-radius:8px;
+
+    height:46px;
+
+    font-weight:500;
+
+}
+
+textarea.form-control{
+
+    height:auto;
+
+}
+
+.btn-primary{
+
+    background:#17a2d8;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    height:45px;
+
+    min-width:180px;
+
+}
+
+.btn-primary:hover{
+
+    background:#0d8bb9;
+
+}

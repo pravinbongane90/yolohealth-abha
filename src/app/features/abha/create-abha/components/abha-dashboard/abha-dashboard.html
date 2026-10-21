@@ -1,0 +1,123 @@
+<div class="landing-page">
+
+    <div class="overlay"></div>
+
+    <div class="container">
+
+        <h2 class="title">
+            ABHA CREATION / VERIFICATION
+        </h2>
+
+        <div class="glass-card">
+
+            <div class="section">
+
+            <h3>ABHA Creation</h3>
+
+            <hr>
+
+            <div class="aadhaar-row">
+
+                <label class="radio-option">
+
+                    <input
+                        type="radio"
+                        name="abha"
+                        [checked]="usingAadhaar"
+                        (change)="selectAadhaar()">
+
+                    <span>Using Aadhaar</span>
+
+                </label>
+
+                @if(usingAadhaar){
+
+                    <button
+                        class="btn btn-info text-white px-4"
+                        (click)="next()" style="    font-size: 22px; font-weight: 500;">
+
+                        Next
+
+                    </button>
+
+                }
+
+                </div>
+
+                @if(usingAadhaar){
+
+                    <div class="description">
+
+                        You can create your ABHA number using Aadhaar instantaneously.
+                        Please ensure that Aadhaar is linked to a Mobile Number as an OTP
+                        authentication will follow. If you do not have a Mobile Number
+                        linked, visit the nearest
+                        <a href="#">ABDM participating facility</a>.
+
+                    </div>
+
+                }
+
+            </div>
+            <hr>
+            <div class="section">
+
+                <div class="section-header">
+
+                    <h3>ABHA Verification</h3>
+
+                    <button
+                        class="btn btn-success"
+                        (click)="openPatientScanProfileList()" style="font-size: 22px; font-weight: 500;">
+
+                        QR Code List
+
+                    </button>
+
+                </div>
+
+                <hr>
+
+                <div class="button-grid">
+
+                    <button
+                        class="btn btn-success"
+                        (click)="openVerifyAbhaAddress()" style="font-size: 22px; font-weight: 500;">
+
+                        Verify ABHA Address
+
+                    </button>
+
+                    <button
+                        class="btn btn-success"
+                        (click)="openVerifyAbhaNumber()" style="font-size: 22px; font-weight: 500;">
+
+                        Verify ABHA Number
+
+                    </button>
+
+                    <button
+                        class="btn btn-primary"
+                        (click)="openFetchByAadhaar()" style="font-size: 22px; font-weight: 500;">
+
+                        Fetch Using Aadhaar
+
+                    </button>
+
+                    <button
+                        class="btn btn-primary"
+                        (click)="openFetchByMobile()" style="font-size: 22px; font-weight: 500;">
+
+                        Fetch Using Mobile
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

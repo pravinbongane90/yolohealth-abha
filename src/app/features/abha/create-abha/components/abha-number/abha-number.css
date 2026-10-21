@@ -1,0 +1,201 @@
+.page{
+
+    width:100%;
+    font-size: 18px;
+    padding:20px 200px 40px;
+    background:rgb(236 243 244 / 45%);
+
+}
+
+.title{
+
+    text-align:center;
+
+    color:#008ad8;
+
+    margin-bottom:25px;
+
+    font-weight:500;
+
+}
+
+/*=====================*/
+
+
+.stepper{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+    background-color: #ffffff;
+    padding: 35px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #777;
+}
+
+.circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #bdbdbd;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+/* Active Step */
+.step.active {
+    color: #000;
+    font-weight: 500;
+}
+
+.step.active .circle {
+    background: #28a745;   /* Green circle */
+    color: #fff;
+}
+
+.step.active span {
+    color: #000;
+}
+
+.circle.completed{
+    background:#28a745;
+}
+
+.step-title{
+
+    margin-top:8px;
+    font-size:18px;
+    font-weight:500;
+
+}
+
+/*=======================*/
+
+.card{
+
+    background: #ffffff;
+
+    backdrop-filter:blur(8px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    padding:40px;
+
+    min-height:520px;
+
+}
+
+.card h1{
+
+    margin-top:25px;
+
+    font-size:48px;
+
+    font-weight:600;
+
+}
+
+.card h3{
+
+    margin-top:30px;
+
+    font-size:32px;
+
+}
+
+.success{
+
+    margin-top:55px;
+
+    font-size:18px;
+
+    color:#444;
+
+}
+
+.success span{
+
+    color:green;
+
+    font-size:20px;
+
+}
+
+.btn-area{
+
+    margin-top:70px;
+
+    text-align:right;
+
+}
+
+.btn{
+
+    width:140px;
+
+    height:48px;
+
+    font-size:20px;
+
+}
+
+.title-success{
+
+    font-size:42px;
+
+    font-weight:600;
+
+    margin-top:20px;
+
+    color:#333;
+
+}
+
+.info{
+
+    margin-top:25px;
+
+    font-size:18px;
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+.success{
+
+    margin-top:40px;
+
+    font-size:18px;
+
+    color:#333;
+
+}
+
+.tick{
+
+    color:green;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.button-group{
+
+    margin-top:60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+}

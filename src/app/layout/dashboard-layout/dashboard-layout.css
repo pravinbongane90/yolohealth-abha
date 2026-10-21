@@ -1,0 +1,394 @@
+/* =========================================================
+   APP LAYOUT
+   ========================================================= */
+
+:host {
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-layout {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f4f7fb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   TOP HEADER
+   ========================================================= */
+
+.top-header {
+  height: 76px;
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #1768b5;
+  color: #ffffff;
+
+  padding: 0 18px;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+
+  z-index: 100;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  height: 100%;
+}
+
+.brand-icon {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.brand-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.brand-text {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+   ========================================================= */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.icon-button {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+
+  padding: 0;
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
+}
+
+.icon-button:hover {
+  opacity: 0.8;
+}
+
+.icon-button svg {
+  width: 21px;
+  height: 21px;
+}
+
+
+/* =========================================================
+   USER
+   ========================================================= */
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #ffffff;
+}
+
+.user-icon {
+  width: 27px;
+  height: 27px;
+
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.admin-text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+.app-body {
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+
+  background: #f4f7fb;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+  width: 183px;
+  min-width: 183px;
+
+  background: #124b9e;
+
+  color: #ffffff;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-nav {
+  width: 100%;
+  padding: 0;
+}
+
+
+/* =========================================================
+   SIDEBAR ITEM
+   ========================================================= */
+
+.nav-item {
+  position: relative;
+
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 13px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-item.active {
+  background: #2196e8;
+}
+
+
+/* =========================================================
+   NAV ICON
+   ========================================================= */
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 7px;
+
+  flex-shrink: 0;
+}
+
+.nav-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.nav-label {
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main-content {
+  flex: 1;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #f5f7fa;
+}
+
+.content-wrapper {
+  width: 100%;
+  min-height: 100%;
+
+  padding: 18px 17px 28px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.app-footer {
+  height: 32px;
+  min-height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #1768b5;
+
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  letter-spacing: 0.1px;
+
+  z-index: 100;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.main-content::-webkit-scrollbar,
+.sidebar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.main-content::-webkit-scrollbar-track,
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: #b9c3cf;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+  background: #9da9b7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .top-header {
+    height: 64px;
+    min-height: 64px;
+
+    padding: 0 12px;
+  }
+
+  .brand-text {
+    font-size: 15px;
+  }
+
+  .sidebar {
+    width: 160px;
+    min-width: 160px;
+  }
+
+  .nav-item {
+    font-size: 11px;
+  }
+
+  .content-wrapper {
+    padding: 14px 10px 22px;
+  }
+}
+
+
+@media (max-width: 550px) {
+
+  .sidebar {
+    width: 55px;
+    min-width: 55px;
+  }
+
+  .nav-item {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .nav-icon {
+    margin-right: 0;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  .admin-text {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+}

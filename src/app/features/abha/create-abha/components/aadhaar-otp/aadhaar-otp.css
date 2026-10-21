@@ -1,0 +1,174 @@
+
+
+.otp-page{
+
+    min-height:50vh;
+
+    background:url('/assets/images/doctor-bg.jpg');
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+    font-size: 18px;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+    background:rgb(236 243 244 / 45%);
+
+}
+
+.glass-card{
+
+    width:100%;
+
+    max-width:1400px;
+
+}
+
+.page-title{
+
+    text-align:center;
+
+    color:#0b8de3;
+
+    font-weight:500;
+    font-size: 35px;
+
+    margin-bottom:30px;
+
+}
+
+.auth-card{
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:18px;
+
+}
+
+.stepper{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:40px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #777;
+}
+
+.circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #bdbdbd;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+/* Active Step */
+.step.active {
+    color: #000;
+    font-weight: 500;
+}
+
+.step.active .circle {
+    background: #28a745;   /* Green circle */
+    color: #fff;
+}
+
+.step.active span {
+    color: #000;
+}
+
+.circle.completed{
+    background:#28a745;
+}
+
+.step-title{
+
+    margin-top:8px;
+    font-size:18px;
+    font-weight:500;
+
+}
+
+.form-control{
+
+    height:55px;
+
+    border-radius:10px;
+
+}
+
+.alert{
+
+    border-radius:10px;
+    font-size: 18px;
+
+}
+
+.timer{
+
+    color:#198754;
+
+    font-weight:500;
+
+}
+
+.resend{
+
+    color:#0d6efd;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+}
+
+.btn{
+
+    min-width:170px;
+
+    border-radius:10px;
+
+    font-size: 22px;
+    font-weight: 500;
+
+}
+
+@media(max-width:992px){
+
+.stepper{
+
+    overflow:auto;
+
+    justify-content:flex-start;
+
+}
+
+.step{
+
+    min-width:120px;
+
+}
+
+.auth-card{
+
+    padding:10px;
+
+}
+
+}

@@ -1,0 +1,162 @@
+.landing-page{
+
+    position:relative;
+
+    min-height:100vh;
+
+    background:url("/assets/images/abha-bg.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    backdrop-filter:blur(8px);
+
+    background:rgba(255,255,255,.25);
+
+}
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+    padding-top:50px;
+
+}
+
+.title{
+
+    text-align:center;
+
+    color:#0088d7;
+
+    font-weight:600;
+
+    margin-bottom:40px;
+
+}
+
+.glass-card{
+
+    max-width:100%;
+
+    margin:auto;
+
+    padding:50px;
+
+    background:rgb(236 243 244 / 45%);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.6);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.section{
+
+    margin-bottom:50px;
+
+}
+
+.section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.radio-option{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    font-weight: 500;
+
+}
+
+input[type="radio"] {
+  transform: scale(2.0); /* Increase to 1.5x */
+  margin-right: 8px;
+}
+
+.button-grid{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.button-grid .btn{
+
+    min-width:23%;
+    margin-top: 18px;
+    font-size: 20px;
+
+}
+
+.aadhaar-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.radio-option{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+.description{
+
+    margin-top:15px;
+
+    margin-left:40px;
+
+    color:#444;
+
+    line-height:1.7;
+
+    max-width: 950px;
+    
+    font-size: 20px;
+
+}

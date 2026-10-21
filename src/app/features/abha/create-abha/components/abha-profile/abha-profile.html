@@ -1,0 +1,136 @@
+<div class="profile-page">
+
+    <h2 class="page-title">
+        ABHA PROFILE
+    </h2>
+    
+
+    <div class="glass-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h4>{{profile.fullName}}</h4>
+
+                <small>
+                    Health Account Created Successfully
+                </small>
+
+            </div>
+
+            <span class="badge bg-success">
+                VERIFIED
+            </span>
+
+        </div>
+
+        <hr>
+
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+
+                <label>Full Name</label>
+
+                <input
+                    class="form-control"
+                    [value]="profile.fullName"
+                    readonly>
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label>Mobile Number</label>
+
+                <input
+                    class="form-control"
+                    [value]="profile.mobile"
+                    readonly>
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label>Gender</label>
+
+                <input
+                    class="form-control"
+                    [value]="profile.gender"
+                    readonly>
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label>Email</label>
+
+                <input
+                    class="form-control"
+                    [value]="profile.email"
+                    readonly>
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label>ABHA Number</label>
+
+                <input
+                    class="form-control"
+                    [value]="profile.abhaNumber"
+                    readonly>
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label>ABHA Address</label>
+
+                <input
+                    class="form-control"
+                    [value]="profile.abhaAddress"
+                    readonly>
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+
+                <label>Date of Birth</label>
+
+                <input
+                    class="form-control"
+                    [value]="profile.dob"
+                    readonly>
+
+            </div>
+
+            <div class="col-md-12 mb-4">
+
+                <label>Address</label>
+
+                <textarea
+                    class="form-control"
+                    rows="2"
+                    readonly>{{profile.address}}</textarea>
+
+            </div>
+
+        </div>
+
+        <div class="text-end">
+
+            <button
+                class="btn btn-primary px-5"
+                (click)="finishProcess()">
+
+                Finish
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,291 @@
+<div class="patient-list-page">
+
+  <!-- Page Title -->
+  <h1 class="page-title">
+    ABHA QR PATIENT SCAN LIST
+  </h1>
+
+  <!-- Main Card -->
+  <section class="patient-card">
+
+    <!-- Card Header -->
+    <div class="card-header">
+
+      <h2 class="card-title">
+        QR Patient List
+      </h2>
+
+      <div class="card-actions">
+
+        <button
+          type="button"
+          class="btn btn-view"
+          (click)="viewQr()">
+          View QR
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-refresh"
+          (click)="refresh()">
+
+          <span class="refresh-icon">⟳</span>
+          Refresh
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="header-divider"></div>
+
+    <!-- Patient Table -->
+    <div class="table-wrapper">
+
+      <table class="patient-table">
+
+        <thead>
+          <tr>
+            <th class="serial-column">Sr.No</th>
+            <th>Name</th>
+            <th>ABHA Address</th>
+            <th>ABHA Number</th>
+            <th>Gender</th>
+            <th class="action-column">Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <!-- Data -->
+          @if (patients && patients.length > 0) {
+
+            @for (patient of patients; track $index) {
+
+              <tr>
+
+                <td>
+                  {{ $index + 1 }}
+                </td>
+
+                <td>
+                  {{ patient.name }}
+                </td>
+
+                <td>
+                  {{ patient.abhaAddress }}
+                </td>
+
+                <td>
+                  {{ patient.abhaNumber }}
+                </td>
+
+                <td>
+                  {{ patient.gender }}
+                </td>
+
+                <td class="action-cell">
+
+                    <button
+                        type="button"
+                        class="update-btn"
+                        (click)="updatePatient(patient)">
+                        Update
+                    </button>
+
+                    </td>
+
+
+              </tr>
+
+            }
+
+          }
+
+          <!-- Empty State -->
+          @else {
+
+            <tr class="empty-row">
+
+              <td
+                colspan="6"
+                class="no-data">
+                No Data Available
+              </td>
+
+            </tr>
+
+          }
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    @if (showQrModal) {
+
+    <div
+        class="qr-overlay"
+        (click)="onOverlayClick($event)">
+
+        <div class="qr-modal">
+
+        <!-- Header -->
+        <div class="qr-modal-header">
+
+            <div class="qr-header-content">
+
+            <div class="qr-header-icon">
+                <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <rect
+                    x="3"
+                    y="3"
+                    width="7"
+                    height="7"
+                    rx="1"
+                    stroke="currentColor"
+                    stroke-width="1.8" />
+
+                <rect
+                    x="14"
+                    y="3"
+                    width="7"
+                    height="7"
+                    rx="1"
+                    stroke="currentColor"
+                    stroke-width="1.8" />
+
+                <rect
+                    x="3"
+                    y="14"
+                    width="7"
+                    height="7"
+                    rx="1"
+                    stroke="currentColor"
+                    stroke-width="1.8" />
+
+                <path
+                    d="M14 14H17V17H14V14Z"
+                    fill="currentColor" />
+
+                <path
+                    d="M18 18H21V21H18V18Z"
+                    fill="currentColor" />
+
+                <path
+                    d="M14 18H16"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round" />
+
+                <path
+                    d="M18 14H21"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round" />
+
+                </svg>
+            </div>
+
+            <div>
+                <h2>YoloHealth</h2>
+                <p>ABHA QR Code</p>
+            </div>
+
+            </div>
+
+
+            <!-- Close -->
+            <button
+            type="button"
+            class="qr-close"
+            aria-label="Close"
+            (click)="closeQrModal()">
+
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <path
+                d="M6 6L18 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round" />
+
+                <path
+                d="M18 6L6 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round" />
+
+            </svg>
+
+            </button>
+
+        </div>
+
+
+        <!-- Body -->
+        <div class="qr-modal-body">
+
+            <!-- Counter -->
+            <div class="counter-badge">
+
+            <span class="counter-label">
+                Counter
+            </span>
+
+            <span class="counter-value">
+                {{ qrCounter }}
+            </span>
+
+            </div>
+
+
+            <!-- Description -->
+            <div class="qr-description">
+            Scan this QR code to access the ABHA patient profile
+            </div>
+
+
+            <!-- QR -->
+            <div class="qr-box">
+
+            <div class="qr-image-wrapper">
+
+                <img
+                [src]="qrImage"
+                alt="YoloHealth ABHA QR Code"
+                class="qr-image">
+
+            </div>
+
+            </div>
+
+
+            <!-- Bottom text -->
+            <div class="qr-footer-text">
+            Please scan the QR code using a compatible application.
+            </div>
+
+        </div>
+
+        </div>
+
+    </div>
+
+    }
+
+
+
+  </section>
+
+</div>

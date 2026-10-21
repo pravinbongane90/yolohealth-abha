@@ -1,0 +1,236 @@
+<div class="otp-page">
+
+    <div class="glass-card">
+
+        <h2 class="page-title">
+            CREATE ABHA ADDRESS/NUMBER
+        </h2>
+        <hr>
+
+        <!-- Stepper -->
+
+        <div class="stepper">
+
+            <div class="step done">
+
+                <div class="circle">
+                    ✓
+                </div>
+
+                <span>Aadhaar Number</span>
+
+            </div>
+
+            <div class="line active"></div>
+
+            <div class="step active">
+
+                <div class="circle">
+                    2
+                </div>
+
+                <span>Aadhaar Authentication</span>
+
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="circle">3</div>
+                <span>Mobile Link With ABHA</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="circle">4</div>
+                <span>ABHA Number</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="circle">5</div>
+                <span>ABHA Address</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="circle">6</div>
+                <span>Abha Number/Address/Card</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="circle">7</div>
+                <span>ABHA Profile</span>
+            </div>
+
+        </div>
+        <hr>
+
+        <div class="card shadow-lg border-0 auth-card">
+
+            <div class="card-body p-5">
+
+                <div class="alert alert-info">
+
+                    <i class="bi bi-check-circle-fill me-2"></i>
+
+                    OTP has been sent to your Aadhaar linked mobile number.
+
+                </div>
+
+                <div class="row mt-4">
+
+                    <div class="col-lg-6">
+
+                        <label class="form-label" style="font-size: 22px;">
+
+                            Enter OTP
+
+                        </label>
+
+                        <input
+                            type="text"
+                            maxlength="6"
+                            class="form-control form-control-lg"
+                            [(ngModel)]="otp"
+                            (input)="onlyOtpNumber($event)"
+                            placeholder="Enter OTP">
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold" style="font-size: 22px;">
+                            Registered Mobile Number
+                        </label>
+
+                        <input
+                            type="text"
+                            maxlength="10"
+                            class="form-control form-control-lg"
+                            [(ngModel)]="mobileNumber"
+                            (input)="onlyMobileNumber($event)"
+                            placeholder="Enter Mobile Number">
+                    </div>
+
+                </div>
+
+                <div class="mt-4">
+
+                    @if (!showResend) {
+                        <div class="text-success fw-semibold mt-3" style="font-size: 20px;">
+                            Resend OTP in {{ timerText }}
+                        </div>
+                    }
+
+                    @if (showResend) {
+                        <button
+                            class="btn btn-link p-0 mt-3"
+                            (click)="resendOtp()" style="font-size: 20px;">
+                            Resend OTP
+                        </button>
+                    }
+
+                </div>
+
+                <hr class="my-4">
+
+                <div class="d-flex justify-content-between mt-5">
+
+                    <button
+                        class="btn btn-outline-secondary px-5"
+                        (click)="back()">
+                        ← Back
+                    </button>
+
+                    <button
+                        class="btn btn-primary px-5"
+                        (click)="verifyOtp()">
+                        Verify OTP
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- <div class="step-container">
+
+    <h3>OTP Verification</h3>
+
+    <p>
+
+        Enter the OTP sent to your mobile.
+
+    </p>
+
+    <form [formGroup]="otpForm">
+
+        <mat-form-field
+            appearance="outline"
+            class="full-width">
+
+            <mat-label>
+
+                OTP
+
+            </mat-label>
+
+            <input
+                matInput
+                maxlength="6"
+                formControlName="otp">
+
+            <mat-icon matSuffix>
+
+                lock
+
+            </mat-icon>
+
+            <mat-error
+                *ngIf="otpForm.get('otp')?.hasError('required')">
+
+                OTP is required
+
+            </mat-error>
+
+        </mat-form-field>
+
+        <div class="btn-area">
+
+            <button
+                mat-stroked-button
+                color="primary"
+                (click)="previous.emit()">
+
+                Previous
+
+            </button>
+
+            &nbsp;
+
+            <button
+                mat-raised-button
+                color="primary"
+                (click)="verifyOtp()"
+                [disabled]="loading">
+
+                {{loading ? 'Verifying...' : 'Verify OTP'}}
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div> -->

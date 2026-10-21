@@ -1,0 +1,253 @@
+<div class="verification-page">
+
+    <div class="container">
+
+        <h2 class="page-title">
+            ABHA Verification
+        </h2>
+
+        <!-- Stepper -->
+
+        <div class="stepper">
+
+            <div class="step completed">
+                <div class="circle">
+                    ✓
+                </div>
+                <span>Mobile Number</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step active">
+                <div class="circle">2</div>
+                <span>Select ABHA Profile</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="circle">3</div>
+                <span>Verify OTP</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="circle">4</div>
+                <span>ABHA Profile</span>
+            </div>
+
+        </div>
+
+        <!-- MAIN CARD -->
+        <!-- MAIN CARD -->
+    <div class="verification-card">
+
+      <hr>
+
+      <h3 class="section-title">
+        Find ABHA using mobile number
+      </h3>
+
+      <p class="description">
+        We have found the following ABHA number linked to provided mobile number.
+      </p>
+
+
+      <!-- PROFILE LIST -->
+      <div class="profile-list">
+
+        @for (profile of profiles; track profile.abhaNumber) {
+
+          <div
+            class="profile-card"
+            [class.selected]="selectedProfile?.abhaNumber === profile.abhaNumber"
+            (click)="selectProfile(profile)"
+          >
+
+            <!-- RADIO -->
+            <div class="radio-wrapper">
+
+              <input
+                type="radio"
+                name="abhaProfile"
+                [checked]="selectedProfile?.abhaNumber === profile.abhaNumber"
+                (click)="$event.stopPropagation()"
+                (change)="selectProfile(profile)"
+              >
+
+            </div>
+
+
+            <!-- PROFILE DETAILS -->
+            <div class="profile-details">
+
+              <div class="profile-name">
+                {{ profile.name }}
+              </div>
+
+              <div class="profile-info">
+                KYC:
+                <span class="verified">
+                  ✔ Verified
+                </span>
+              </div>
+
+              <div class="profile-info">
+                ABHA Number:
+                <strong>
+                  {{ profile.abhaNumber }}
+                </strong>
+              </div>
+
+              <div class="profile-info">
+                Gender:
+                <strong>
+                  {{ profile.gender }}
+                </strong>
+              </div>
+
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+
+
+      <!-- AUTHENTICATION SECTION -->
+      @if (selectedProfile) {
+
+        <div class="auth-section">
+
+          <label class="auth-label">
+            Authentication Type <span>*</span>
+          </label>
+
+          <select
+            class="auth-select"
+            [(ngModel)]="selectedAuthMethod"
+          >
+
+            <option value="">
+              --Select Modes--
+            </option>
+
+            @for (method of authMethods; track method) {
+
+              <option [value]="method">
+                {{ getAuthMethodLabel(method) }}
+              </option>
+
+            }
+
+          </select>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+        <div class="button-group">
+
+          @if (selectedAuthMethod) {
+
+            <button
+              type="button"
+              class="btn-action btn-next"
+              (click)="next()"
+            >
+              Next
+            </button>
+
+          }
+
+          <button
+            type="button"
+            class="btn-action btn-back"
+            (click)="back()"
+          >
+            Back
+          </button>
+
+        </div>
+
+      }
+
+    </div>
+
+
+    
+        <!-- <div class="card verification-card">
+
+            <h3 class="section-title">
+                Find ABHA Using Mobile Number
+            </h3>
+
+            <hr>
+
+            <div class="row align-items-end">
+
+                <div class="col-lg-7">
+
+                    <label class="form-label">
+                        Enter Mobile Number
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control form-control-lg"
+                        placeholder="Enter Mobile Number"
+
+                        maxlength="12"
+
+                        [(ngModel)]="mobileNumber"
+
+                        (keypress)="onlyNumber($event)"
+
+                        (input)="onInput($event)" style="font-size: 22px;" >
+
+                    @if(mobileNumber && mobileNumber.length < 10){
+
+                        <small class="text-danger">
+                            Mobile Number must contain exactly 10 digits.
+                        </small>
+
+                    }
+
+
+                </div>
+
+
+            </div>
+            <br><br>
+            <div class="row align-items-end">
+                <div class="col-lg-5">
+
+                    <button
+                        class="btn btn-primary btn-action me-2"
+                        (click)="searchNumber()">
+
+                        <i class="bi bi-search"></i>
+                        Search
+                    </button>
+
+                    <button
+                        class="btn btn-dark btn-action"
+                        (click)="goBack()">
+
+                        <i class="bi bi-arrow-left"></i>
+                        Back
+
+                    </button>
+
+                </div>
+            </div>
+
+
+        </div> -->
+
+    </div>
+
+</div>

@@ -1,0 +1,314 @@
+<div class="app-layout">
+
+  <!-- =========================
+       TOP HEADER
+       ========================= -->
+  <header class="top-header">
+
+    <!-- Logo -->
+    <div class="brand">
+      <div class="brand-icon">
+        <svg
+          viewBox="0 0 32 32"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+
+          <path
+            d="M16 28S4 21.2 4 12.2C4 7.8 7.2 5 11 5c2.2 0 4.1 1.1 5 3
+               0.9-1.9 2.8-3 5-3 3.8 0 7 2.8 7 7.2C28 21.2 16 28 16 28Z"
+            fill="white"
+          />
+
+          <path
+            d="M7.8 15.5h4l1.7-4.1 2.5 8.1 2.1-5.2h3.9"
+            fill="none"
+            stroke="#1768b5"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+
+      <span class="brand-text">YOLO HEALTH</span>
+    </div>
+
+    <!-- Header right -->
+    <div class="header-actions">
+
+      <!-- Notification -->
+      <button class="icon-button" type="button" aria-label="Notifications">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+
+          <path
+            d="M18 8C18 4.686 15.314 2 12 2
+               C8.686 2 6 4.686 6 8
+               C6 15 3 17 3 17
+               H21
+               C21 17 18 15 18 8Z"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+
+          <path
+            d="M10 21H14"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+
+      <!-- User -->
+      <div class="user-area">
+        <div class="user-icon">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+
+            <circle
+              cx="12"
+              cy="8"
+              r="3.2"
+              stroke="currentColor"
+              stroke-width="1.7"
+            />
+
+            <path
+              d="M5.5 20C6.3 16.6 8.4 15 12 15
+                 C15.6 15 17.7 16.6 18.5 20"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+
+        <span class="admin-text">Admin</span>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       BODY
+       ========================= -->
+  <div class="app-body">
+
+    <!-- =========================
+         SIDEBAR
+         ========================= -->
+    <aside class="sidebar">
+
+      <nav class="sidebar-nav">
+
+        <!-- Dashboard -->
+        <a
+          routerLink="/dashboard"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-item">
+
+          <span class="nav-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+
+              <circle
+                cx="12"
+                cy="12"
+                r="8"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+
+              <path
+                d="M8.5 14.5L10.5 12L12 13L15.5 9.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+
+            </svg>
+          </span>
+
+          <span class="nav-label">Dashboard</span>
+        </a>
+
+
+        <!-- Create ABHA -->
+        <a
+          routerLink="/abha/create"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-item">
+
+          <span class="nav-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+
+              <rect
+                x="4"
+                y="5"
+                width="16"
+                height="14"
+                rx="1.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+
+              <path
+                d="M8 9H16"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M8 13H13"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+
+            </svg>
+          </span>
+
+          <span class="nav-label">Create ABHA</span>
+        </a>
+
+
+        <!-- Search ABHA -->
+        <a
+          routerLink="/abha/verification"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-item">
+
+          <span class="nav-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+
+              <circle
+                cx="10.8"
+                cy="10.8"
+                r="6.2"
+                stroke="currentColor"
+                stroke-width="1.7"
+              />
+
+              <path
+                d="M15.5 15.5L20 20"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+              />
+
+            </svg>
+          </span>
+
+          <span class="nav-label">Search ABHA</span>
+        </a>
+
+
+        <!-- ABHA Profile -->
+        <a
+          routerLink="/abha/profile/patient-profile-list"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-item">
+
+          <span class="nav-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+
+              <rect
+                x="4"
+                y="5"
+                width="16"
+                height="14"
+                rx="1.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+
+              <circle
+                cx="9"
+                cy="10"
+                r="2"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+
+              <path
+                d="M6.5 16C7.2 13.9 8.3 13 10 13
+                   C11.7 13 12.8 13.9 13.5 16"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M15 10H18"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M15 13H18"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linecap="round"
+              />
+
+            </svg>
+          </span>
+
+          <span class="nav-label">ABHA Profile</span>
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+    <main class="main-content">
+
+      <div class="content-wrapper">
+
+        <router-outlet></router-outlet>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer class="app-footer">
+    © 2026 YOLO HEALTH | ABHA Portal Version 1.0
+  </footer>
+
+</div>

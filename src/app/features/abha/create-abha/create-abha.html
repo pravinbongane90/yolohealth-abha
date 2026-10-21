@@ -1,0 +1,79 @@
+
+@if(step === 0){
+
+    <app-abha-dashboard
+        (nextStep)="openAadhaarNumber()">
+    </app-abha-dashboard>
+
+}
+
+@if(step === 1){
+
+    <app-aadhaar-number
+        (next)="openAadhaarOtpVerification()"
+        (back)="backToDashboard()">
+    </app-aadhaar-number>
+
+} 
+
+@if(step === 2){
+
+    <app-aadhaar-otp
+        (next)="openAbhaNumber()"
+        (back)="backToAadhaarNumber()">
+    </app-aadhaar-otp>
+
+}
+
+<!-- @if(step === 3){
+
+    <app-abha-number
+        (next)="openAbhaAddress()"
+        (back)="backToMobile()">
+    </app-abha-number>
+
+} -->
+
+@if(step === 4){
+
+    <app-abha-number
+        (next)="openAbhaAddress()"
+        (back)="backToAadhaarOtp()">
+    </app-abha-number>
+
+}
+
+@if(step === 5){
+
+    <app-abha-address
+        (next)="openAbhaNumberAndAddress()"
+        (back)="backToAbhaNumber()">
+    </app-abha-address>
+
+}
+
+@if(step === 6){
+
+    <app-abha-number-address
+        (next)="openProfile()"
+        (back)="backToAbhaAddress()">
+    </app-abha-number-address>
+
+}
+
+@if(step === 7){
+
+    <app-abha-profile
+        (next)="openProfile()"
+        (back)="backToAbhaNumberAddress()">
+    </app-abha-profile>
+
+}
+
+
+<!-- ABHA Verification Flow Here -->
+
+<!-- <app-abha-profile
+    (abha_verification)="abhaVerification()"
+    (back)="backToAbhaNumberAddress()">
+</app-abha-profile> -->

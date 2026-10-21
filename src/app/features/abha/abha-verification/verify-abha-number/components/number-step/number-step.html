@@ -1,0 +1,177 @@
+<div class="verification-page">
+
+    <div class="container">
+
+        <h2 class="page-title">
+            ABHA Verification
+        </h2>
+
+        <!-- Stepper -->
+
+        <hr>
+
+        <div class="stepper">
+
+            <div class="step active">
+                <div class="circle">1</div>
+                <span>Number</span>
+            </div>
+
+            <!-- <div class="line"></div>
+
+            <div class="step">
+                <div class="circle">2</div>
+                <span>Auth Mode</span>
+            </div> -->
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="circle">3</div>
+                <span>OTP</span>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="circle">4</div>
+                <span>ABHA Profile</span>
+            </div>
+
+        </div>
+        <hr>
+
+    
+        <div class="card verification-card">
+
+            <h3 class="section-title">
+                Verify ABHA Number
+            </h3>
+
+            <hr>
+
+            <div class="row align-items-end">
+
+                <div class="col-lg-7">
+
+                    <label class="form-label">
+                        Enter ABHA Number
+                    </label>
+
+                    <!-- <input
+                        type="text"
+                        class="form-control form-control-lg"
+                        [(ngModel)]="abhaNumber"
+                        placeholder="example@abdm"> -->
+
+                    <input
+                        type="text"
+                        class="form-control form-control-lg"
+                        placeholder="Enter ABHA Number"
+
+                        maxlength="14"
+
+                        [(ngModel)]="abhaNumber"
+
+                        (keypress)="onlyNumber($event)"
+
+                        (input)="onInput($event)" style="font-size: 22px;" >
+
+                    @if(abhaNumber && abhaNumber.length < 14){
+
+                        <small class="text-danger">
+                            ABHA Number must contain exactly 14 digits.
+                        </small>
+
+                    }
+
+                </div>
+
+                <div class="col-lg-5 text-end mt-3 mt-lg-0">
+
+                    <button
+                        class="btn btn-primary btn-action me-2"
+                        (click)="searchNumber()">
+
+                        <i class="bi bi-search"></i>
+                        Search
+
+                    </button>
+
+                    <button
+                        class="btn btn-dark btn-action"
+                        (click)="goBack()">
+
+                        <i class="bi bi-arrow-left"></i>
+                        Back
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            @if(showAuthDropdown){
+
+            <div class="auth-section">
+
+                <hr>
+
+                <div class="row align-items-end">
+
+                    <div class="col-lg-7">
+
+                        <label class="form-label">
+
+                            Select Authentication Mode
+
+                        </label>
+
+                        <select
+                            class="form-select form-select-lg"
+                            [(ngModel)]="selectedAuthMethod">
+
+                            <option value="">
+                                Select Authentication Mode
+                            </option>
+
+                            @for(method of authMethods; track method){
+
+                                <option [value]="method">
+                                    {{method}}
+                                </option>
+
+                            }
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-lg-5 text-end mt-3 mt-lg-0">
+
+                        @if(selectedAuthMethod){
+
+                        <button
+                            class="btn btn-success btn-action"
+                            (click)="clickNext()">
+
+                            Next
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+
+                        }
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            }
+
+        </div>
+
+    </div>
+
+</div>

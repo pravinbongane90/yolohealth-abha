@@ -1,0 +1,67 @@
+.page-title{
+
+    font-size:30px;
+
+    color:#1565C0;
+
+    font-weight:600;
+
+}
+
+.welcome{
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+.stat-card{
+
+    padding:20px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+}
+
+.stat-card h3{
+
+    color:#777;
+
+    margin-bottom:10px;
+
+}
+
+.stat-card h1{
+
+    color:#1565C0;
+
+    font-size:38px;
+
+    margin:0;
+
+}
+
+table{
+
+    margin-top:15px;
+
+}
+
+mat-card{
+
+    border-radius:15px;
+
+}

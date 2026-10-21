@@ -1,0 +1,172 @@
+<div class="page">
+
+    <h2 class="title">
+        CREATE ABHA ADDRESS/NUMBER
+    </h2>
+    <hr>
+
+    <div class="stepper">
+
+        <div class="step done">
+
+            <div class="circle">
+                ✓
+            </div>
+
+            <span>Aadhaar Number</span>
+
+        </div>
+
+        <div class="step done "></div>
+
+        <div class="step done">
+
+            <div class="circle">
+                    ✓
+            </div>
+
+            <span>Aadhaar Authentication</span>
+
+        </div>
+
+        <div class="step done "></div>
+
+        <div class="step">
+                <div class="circle">3</div>
+                <span>Mobile Link</span>
+        </div>
+        <div class="line"></div>
+
+
+        <div class="step done">
+
+            <div class="circle">
+                ✓
+            </div>
+
+            <span>ABHA Number</span>
+
+        </div>
+
+        <div class="step done "></div>
+        
+
+        <div class="step active">
+            <div class="circle">5</div>
+            <span>ABHA Address</span>
+            </div>
+
+        <div class="line active"></div>
+
+
+        <div class="step">
+            <div class="circle">6</div>
+            <span>ABHA Number/Address/Card</span>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <div class="circle">7</div>
+            <span>ABHA Profile</span>
+        </div>
+
+        <div class="line"></div>
+
+    </div>
+    <hr>
+
+    <div class="step-card">
+
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <label class="form-label">
+
+                    Enter ABHA Address
+
+                </label>
+
+                <input
+                    class="form-control"
+                    [(ngModel)]="enteredAddress"
+                    placeholder="Enter ABHA Address">
+
+            </div>
+
+            <div class="col-md-4 d-flex align-items-end">
+
+                <button
+                    class="btn btn-info text-white w-100"
+                    (click)="checkAvailability()" style="font-size: 18px; font-weight: 500;">
+
+                    Check Availability
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- @if(available){ -->
+
+        <div class="row">
+
+            <div class="col-md-4">
+
+                <label class="form-label">
+
+                    Suggested ABHA Addresses
+
+                </label>
+
+                <select
+                    class="form-select"
+                    [(ngModel)]="selectedAddress"
+                    (change)="onAddressChange()">
+
+                    @for(item of suggestions; track item){
+
+                    <option [value]="item">
+
+                        {{item}}
+
+                    </option>
+
+                    }
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <!-- } -->
+
+        <div class="buttons">
+
+            <button
+                class="btn btn-secondary"
+                (click)="previousBtn()" style="font-size: 18px; font-weight: 500;">
+
+                ← Back
+
+            </button>
+
+            <button
+                class="btn btn-info text-white"
+                [disabled]="!available"
+                (click)="nextBtn()" style="font-size: 18px; font-weight: 500;">
+
+                Next →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,230 @@
+<div class="abha-page">
+
+    <div class="wizard">
+        <div class="page-header">
+
+            <button
+                class="btn btn-secondary"
+                (click)="goBack()">
+
+                <i class="bi bi-arrow-left"></i>
+
+                Back
+
+            </button>
+
+        </div>
+
+        <h2 class="title">
+
+            CREATE ABHA ADDRESS/NUMBER
+
+        </h2>
+        <hr>
+
+        <!-- Stepper -->
+
+        <ul class="stepper">
+
+            <li class="active">
+                <span>1</span>
+                Aadhaar Number
+            </li>
+
+            <li>
+                <span>2</span>
+                Aadhaar Authentication
+            </li>
+
+            <li>
+                <span>3</span>
+                Mobile Link with ABHA
+            </li>
+
+            <li>
+                <span>4</span>
+                ABHA Number
+            </li>
+
+            <li>
+                <span>5</span>
+                ABHA Address
+            </li>
+
+            <li>
+                <span>6</span>
+                ABHA Number/Address/Card
+            </li>
+
+            <li>
+                <span>7</span>
+                ABHA Profile
+            </li>
+
+        </ul>
+        <hr>
+
+        <div class="glass-card">
+
+            <div class="mb-3">
+
+                <label class="form-label fw-bold">
+                    Aadhaar Number
+                </label>
+
+                <input
+                    type="text"
+                    class="form-control form-control-lg"
+                    placeholder="Enter Aadhaar Number"
+
+                    maxlength="12"
+
+                    [(ngModel)]="aadhaarNumber"
+
+                    (keypress)="onlyNumber($event)"
+
+                    (input)="onInput($event)" style="font-size: 22px;" >
+
+                @if(aadhaarNumber && aadhaarNumber.length < 12){
+
+                    <small class="text-danger">
+                        Aadhaar Number must contain exactly 12 digits.
+                    </small>
+
+                }
+
+            </div>
+
+            <div class="consent-box">
+
+                <h5><b>I hereby declare that:</b></h5>
+
+                <div class="form-check mb-3">
+
+                    <input
+                        class="form-check-input consent-checkbox"
+                        type="checkbox"
+                        [(ngModel)]="consent1">
+
+                    <label class="form-check-label">
+
+                        I am voluntarily sharing my Aadhaar Number / Virtual ID issued by the
+                        Unique Identification Authority of India ("UIDAI"), and my demographic
+                        information for the purpose of creating an Ayushman Bharat Health
+                        Account number ("ABHA Number") and Ayushman Bharat Health Account
+                        address ("ABHA Address"). I authorize NHA to use my Aadhaar Number /
+                        Virtual ID for performing Aadhaar based authentication with UIDAI as
+                        per the provisions of the Aadhaar (Targeted Delivery of Financial and
+                        other Subsidies, Benefits and Services) Act, 2016 for the aforesaid
+                        purpose. I understand that UIDAI will share my e-KYC details, or
+                        response of "Yes" with NHA upon successful authentication.
+
+                    </label>
+
+                </div>
+
+                <div class="form-check mb-3">
+
+                    <input
+                        class="form-check-input consent-checkbox"
+                        type="checkbox"
+                        [(ngModel)]="consent2">
+
+                    <label class="form-check-label">
+
+                        I consent to usage of my ABHA Address and ABHA Number for linking
+                        my legacy (past) health records and those which will be generated
+                        during this encounter.
+
+                    </label>
+
+                </div>
+
+                <div class="form-check mb-3">
+
+                    <input
+                        class="form-check-input consent-checkbox"
+                        type="checkbox"
+                        [(ngModel)]="consent3">
+
+                    <label class="form-check-label">
+
+                        I authorize the sharing of all my health records with healthcare
+                        provider(s) for the purpose of providing healthcare services to me
+                        during this encounter.
+
+                    </label>
+
+                </div>
+
+                <div class="form-check mb-3">
+
+                    <input
+                        class="form-check-input consent-checkbox"
+                        type="checkbox"
+                        [(ngModel)]="consent4">
+
+                    <label class="form-check-label">
+
+                        I consent to the anonymization and subsequent use of my health
+                        records for public health purposes.
+
+                    </label>
+
+                </div>
+
+                <div class="form-check mb-3">
+
+                    <input
+                        class="form-check-input consent-checkbox"
+                        type="checkbox"
+                        [(ngModel)]="consent5">
+
+                    <label class="form-check-label">
+
+                        I, <b>HealthATM India Pvt. Ltd.</b>, confirm that I have duly
+                        informed and explained the beneficiary of the contents of consent
+                        for the aforementioned purposes.
+
+                    </label>
+
+                </div>
+
+                <div class="form-check">
+
+                    <input
+                        class="form-check-input consent-checkbox"
+                        type="checkbox"
+                        [(ngModel)]="consent6">
+
+                    <label class="form-check-label">
+
+                        I,
+                        <b>{{ username }}</b>,
+                        have been explained about the consent as stated above and hereby
+                        provide my consent for the aforementioned purposes.
+
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="text-end mt-4">
+
+                <button
+                    class="btn btn-info text-white px-5"
+                    [disabled]="!(consent1 && consent2 && consent3 && consent4 && consent5 && consent6 && aadhaarNumber.length == 12)"
+                    (click)="sendOtp()" style="font-size: 22px; font-weight: 500;">
+
+                    Send OTP
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

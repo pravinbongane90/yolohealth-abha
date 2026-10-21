@@ -1,0 +1,167 @@
+<h2 class="page-title">
+
+Dashboard
+
+</h2>
+
+<p class="welcome">
+
+Welcome to YOLO Health ABHA Portal
+
+</p>
+
+<div class="stats">
+
+    <mat-card class="stat-card">
+
+        <h3>Total ABHA</h3>
+
+        <h1>{{dashboardStats.totalAbha}}</h1>
+
+    </mat-card>
+
+    <mat-card class="stat-card">
+
+        <h3>Today's ABHA</h3>
+
+        <h1>{{dashboardStats.todayAbha}}</h1>
+
+    </mat-card>
+
+    <mat-card class="stat-card">
+
+        <h3>Pending OTP</h3>
+
+        <h1>{{dashboardStats.pendingOtp}}</h1>
+
+    </mat-card>
+
+    <mat-card class="stat-card">
+
+        <h3>Success</h3>
+
+        <h1>{{dashboardStats.success}}</h1>
+
+    </mat-card>
+
+</div>
+
+<div class="row mt-4">
+
+    <div class="col-md-6">
+
+        <mat-card>
+
+            <mat-card-header>
+
+                <mat-card-title>
+
+                    Quick Actions
+
+                </mat-card-title>
+
+            </mat-card-header>
+
+            <mat-card-content>
+
+                <button mat-raised-button color="primary">
+
+                    Create ABHA
+
+                </button>
+
+                &nbsp;
+
+                <button mat-raised-button>
+
+                    Search ABHA
+
+                </button>
+
+            </mat-card-content>
+
+        </mat-card>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <mat-card>
+
+            <mat-card-header>
+
+                <mat-card-title>
+
+                    Recent Activity
+
+                </mat-card-title>
+
+            </mat-card-header>
+
+            <mat-card-content>
+
+                <table class="table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Name</th>
+
+                            <th>Mobile</th>
+
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Rahul</td>
+
+                            <td>98XXXXXX12</td>
+
+                            <td>
+
+                                <span class="badge bg-success">
+
+                                    Created
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Amit</td>
+
+                            <td>99XXXXXX56</td>
+
+                            <td>
+
+                                <span class="badge bg-warning">
+
+                                    Pending
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </mat-card-content>
+
+        </mat-card>
+
+    </div>
+
+</div>

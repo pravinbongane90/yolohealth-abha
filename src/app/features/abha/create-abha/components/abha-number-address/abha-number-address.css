@@ -1,0 +1,211 @@
+
+.page{
+
+    width:100%;
+    font-size: 18px;
+    padding:20px 200px 40px;
+    background:rgb(236 243 244 / 45%);
+
+}
+
+.title{
+
+    text-align:center;
+
+    color:#008ad8;
+
+    margin-bottom:25px;
+
+    font-weight:500;
+
+}
+
+/*=====================*/
+
+
+.stepper{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:40px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #777;
+}
+
+.circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #bdbdbd;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+/* Active Step */
+.step.active {
+    color: #000;
+    font-weight: 500;
+}
+
+.step.active .circle {
+    background: #28a745;   /* Green circle */
+    color: #fff;
+}
+
+.step.active span {
+    color: #000;
+}
+
+.circle.completed{
+    background:#28a745;
+}
+
+.step-title{
+
+    margin-top:8px;
+    font-size:18px;
+    font-weight:500;
+
+}
+
+/*=======================*/
+
+
+.step-card{
+
+    width:100%;
+
+    min-height:520px;
+
+    padding:35px;
+
+    background:rgba(255,255,255,.30);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:8px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+}
+
+.form-label{
+
+    font-weight:600;
+
+    color:#333;
+
+}
+
+.form-control{
+
+    height:48px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    background:#fff;
+
+}
+
+.btn-info{
+
+    height:48px;
+
+    background:#17a2d8;
+
+    border:none;
+
+    font-size:18px;
+
+    font-weight: 500;
+
+}
+
+.button-group{
+
+    margin-top:320px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+
+.btn-success{
+
+    min-width:130px;
+
+}
+
+
+.preview-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.preview-card{
+
+    width:50%;
+    height: 75%;
+
+    background:#fff;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+}
+
+.preview-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 20px;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.preview-body{
+
+    padding:20px;
+
+    text-align:center;
+
+}
+
+.preview-body img{
+
+    width:100%;
+
+    border-radius:8px;
+
+    border:1px solid #ddd;
+
+}
